@@ -1,0 +1,48 @@
+﻿
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>@ViewBag.Title - Example with Angular</title>
+        <!-- Bootstrap -->
+        <link href="~/Content/Template/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="~/Content/Site.css" rel="stylesheet" />
+        <style type="text/css">
+            
+        </style>
+
+    </head>
+  <body>
+      <div class="container">
+          <div class="masthead">
+              <div class="navbar">
+                  <div class="navbar-inner">
+                      <div class="container">
+                          <ul class="nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Downloads</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="jumbotron">
+              @RenderBody()
+        <h1>testing stuff!</h1>
+        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <a href="#" class="btn btn-large btn-success">Get started today</a>
+      </div>
+
+
+      </div>
+      
+      
+              @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+
+  </body>
+</html>
