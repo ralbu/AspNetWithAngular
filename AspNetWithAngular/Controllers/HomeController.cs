@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AspNetWithAngular.Models;
 
 namespace AspNetWithAngular.Controllers
 {
@@ -28,5 +29,13 @@ namespace AspNetWithAngular.Controllers
 
             return View();
         }
+
+		[HttpPost]
+		public ActionResult Contact(ContactModel model)
+		{
+			return View();
+		}
     }
+
+
 }

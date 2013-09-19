@@ -2,23 +2,60 @@
     ViewBag.Title = "Contact";
 }
 
+@section Scripts
+{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}
+
 <div class="span12">
     <div>Some text here</div>
     <div class="row">
         <div class="span5">
             <div class="form-wrapper">
-                <form class="form-horizontal">
+                <form class="form-horizontal" method="POST">
                     <fieldset>
                         <div class="control-group">
                             <label class="control-label" for="name">Name</label>
                             <div class="controls">
-                                <input type="text" class="input-medium" id="name" name="name" >
-                                <span class="field-validation-valid" ></span>
+                                <input type="text" class="input-medium" id="name" name="name" data-val="true" data-val-required="*">
+                                <span class="field-validation-valid" data-valmsg-for="name" data-valmsg-replace="true"></span>
+@*
+                                <input type="text" class="input-medium" id="name" name="name" data-val="true" data-val-required="*">
+                                <span class="field-validation-valid" data-valmsg-for="name" data-valmsg-replace="true"></span>
+*@
+
                             </div>
-                        </div>      
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" for="email">Email</label>
+                            <div class="controls">
+                                <input type="text" class="input-medium" id="email" name="email" data-val="true" data-val-required="*" data-val-email="Not valid">
+                                <span class="field-validation-valid" data-valmsg-for="email" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="website">Website</label>
+                            <div class="controls">
+                                <input type="text" class="input-medium" id="website" name="website" data-val="true" data-val-required="*">
+                                <span class="field-validation-valid" data-valmsg-for="website" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="comment">Message</label>
+                            <div class="controls">
+                                <textarea class="input-medium" id="comment" rows="3" name="comment" data-val="true" data-val-required="*"></textarea>
+                                <span class="field-validation-valid" data-valmsg-for="comment" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <button type="submit" class="btn">Send</button>
+                        </div>
                     </fieldset>
                 </form>
-                </div>
+            </div>
         </div>
     </div>
 </div>
