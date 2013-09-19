@@ -56,6 +56,11 @@ namespace AspNetWithAngular.Controllers
 
 			return View();
 		}
+
+		public ActionResult Messages()
+		{
+			return View();
+		}
     }
 
 
