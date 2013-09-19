@@ -2,49 +2,57 @@
     ViewBag.Title = "Contact";
 }
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>@ViewBag.Message</h2>
-</hgroup>
+<div class="span12">
+    <div>Some text here</div>
+    <div class="row">
+        <div class="span5">
+            <div class="form-wrapper">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="control-group">
+                            <label class="control-label" for="name">Name</label>
+                            <div class="controls">
+                                <input type="text" class="input-medium" id="name" name="name" >
+                                <span class="field-validation-valid" ></span>
+                            </div>
+                        </div>      
+                    </fieldset>
+                </form>
+                </div>
+        </div>
+    </div>
+</div>
 
-<section class="contact">
-    <header>
-        <h3>Phone</h3>
-    </header>
-    <p>
-        <span class="label">Main:</span>
-        <span>425.555.0100</span>
-    </p>
-    <p>
-        <span class="label">After Hours:</span>
-        <span>425.555.0199</span>
-    </p>
-</section>
 
-<section class="contact">
-    <header>
-        <h3>Email</h3>
-    </header>
-    <p>
-        <span class="label">Support:</span>
-        <span><a href="mailto:Support@example.com">Support@example.com</a></span>
-    </p>
-    <p>
-        <span class="label">Marketing:</span>
-        <span><a href="mailto:Marketing@example.com">Marketing@example.com</a></span>
-    </p>
-    <p>
-        <span class="label">General:</span>
-        <span><a href="mailto:General@example.com">General@example.com</a></span>
-    </p>
-</section>
-
-<section class="contact">
-    <header>
-        <h3>Address</h3>
-    </header>
-    <p>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399
-    </p>
-</section>
+@*<form class="form-horizontal" method="post">
+    <fieldset>
+        <div class="control-group">
+            <label class="control-label" for="name">Name</label>
+            <div class="controls">
+                <input type="text" class="input-medium" id="name" name="name" >
+                <span class="field-validation-valid" ></span>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="email">Email</label>
+            <div class="controls">
+                <input type="text" class="input-medium" id="email" name="email" >
+                <span class="field-validation-valid"></span>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="website">Website</label>
+            <div class="controls">
+                <input type="text" class="input-medium" id="website" name="website" >
+                <span class="field-validation-valid"></span>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="comment">Message</label>
+            <div class="controls">
+                <textarea class="input-medium" id="comment" rows="3" name="comment" data-val="true" data-val-required="*"></textarea>
+                <span class="field-validation-valid" data-valmsg-for="comment" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+    </fieldset>
+</form>*@

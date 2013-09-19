@@ -23,25 +23,34 @@
                 <li><a href="#">Services</a></li>
                 <li><a href="#">Downloads</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="Home/Contact">Contact</a></li>
               </ul>
                       </div>
                   </div>
               </div>
           </div>
-
+          
+          <div class="main">
+              <div class="container">
+                  <div class="row">
+                      @RenderBody()
+                  </div>
+              </div>
+          </div>
+          
+@*
           <div class="jumbotron">
               @RenderBody()
         <h1>testing stuff!</h1>
         <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
         <a href="#" class="btn btn-large btn-success">Get started today</a>
-      </div>
+      </div>*@
 
 
       </div>
       
       
-              @Scripts.Render("~/bundles/jquery")
+@*      @Scripts.Render("~/bundles/jquery")*@
         @RenderSection("scripts", required: false)
 
   </body>
