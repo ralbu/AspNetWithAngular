@@ -4,11 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AspNetWithAngular.Models;
+using AspNetWithAngular.Services;
 
 namespace AspNetWithAngular.Controllers
 {
     public class HomeController : Controller
     {
+	    private IMailService _mail;
+
+	    public HomeController(IMailService mail)
+	    {
+		    _mail = mail;
+	    }
+
         public ActionResult Index()
         {
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
@@ -33,6 +41,19 @@ namespace AspNetWithAngular.Controllers
 		[HttpPost]
 		public ActionResult Contact(ContactModel model)
 		{
+			var msg = String.Format("Comment from {1}{0}Email:{2}{0}Website{3}{0}Comment{4}{0}",
+				Environment.NewLine,
+				model.Name,
+				model.Email,
+				model.Website,
+				model.Comments);
+
+
+			if (_mail.SendMail("noreply@domain.com", "you@domain.com", "Comment from website", msg))
+			{
+				ViewBag.MailSent = true;
+			}
+
 			return View();
 		}
     }
