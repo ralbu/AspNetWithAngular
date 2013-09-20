@@ -13,6 +13,12 @@ namespace AspNetWithAngular
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+	        routes.MapRoute(
+		        name: "Messages",
+		        url: "Messages",
+		        defaults: new {controller = "Home", action = "Messages"}
+		        );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
