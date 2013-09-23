@@ -10,5 +10,8 @@ namespace AspNetWithAngular.Data
 	{
 		IQueryable<Topic> GetTopics();
 		IQueryable<Reply> GetRepliesByTopic(int topicId);
+
+		bool Save();
+		bool AddTopics(Topic newTopic);
 	}
 }

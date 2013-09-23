@@ -22,5 +22,31 @@ namespace AspNetWithAngular.Data
 		{
 			return _ctx.Replies.Where(r => r.TopicId == topicId);
 		}
+
+		public bool Save()
+		{
+			try
+			{
+				return _ctx.SaveChanges() > 0;
+			}
+			catch (Exception ex)
+			{
+				return false;
+			}
+		}
+
+		public bool AddTopics(Topic newTopic)
+		{
+			try
+			{
+				_ctx.Topics.Add(newTopic);
+
+				return true;
+			}
+			catch (Exception e)
+			{
+				
+			}
+		}
 	}
 }

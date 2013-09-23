@@ -1,5 +1,8 @@
+using System.Web.Http;
 using AspNetWithAngular.Data;
 using AspNetWithAngular.Services;
+using WebApiContrib.IoC.Ninject;
+
 
 [assembly: WebActivator.PreApplicationStartMethod(typeof(AspNetWithAngular.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivator.ApplicationShutdownMethodAttribute(typeof(AspNetWithAngular.App_Start.NinjectWebCommon), "Stop")]
@@ -47,6 +50,9 @@ namespace AspNetWithAngular.App_Start
             kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
             
             RegisterServices(kernel);
+
+			GlobalConfiguration.Configuration.DependencyResolver = new NinjectResolver(kernel);
+
             return kernel;
         }
 
