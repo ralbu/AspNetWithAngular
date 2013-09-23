@@ -45,7 +45,7 @@ namespace AspNetWithAngular.Data
 			}
 			catch (Exception e)
 			{
-				
+				return false;
 			}
 		}
 	}
