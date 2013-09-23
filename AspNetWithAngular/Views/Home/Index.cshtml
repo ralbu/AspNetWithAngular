@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<AspNetWithAngular.Data.Topic>
+
+@{
     ViewBag.Title = "Home Page";
 }
 <div class="span2 foot">Test</div>
@@ -120,3 +122,9 @@
     </div>
 </div>
 
+
+
+@foreach (var topic in Model)
+{
+    <div>@topic.Title</div>   
+}

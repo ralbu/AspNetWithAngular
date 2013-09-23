@@ -1,3 +1,4 @@
+using AspNetWithAngular.Data;
 using AspNetWithAngular.Services;
 
 [assembly: WebActivator.PreApplicationStartMethod(typeof(AspNetWithAngular.App_Start.NinjectWebCommon), "Start")]
@@ -59,9 +60,9 @@ namespace AspNetWithAngular.App_Start
 	        kernel.Bind<IMailService>().To<MockMailService>().InRequestScope();
 #else
 	        kernel.Bind<IMailService>().To<MailService>().InRequestScope();
-
 #endif
-
+	        kernel.Bind<MessageBoardContext>().To<MessageBoardContext>().InRequestScope();
+	        kernel.Bind<IMessageBoardRepository>().To<MessageBoardRepository>().InRequestScope();
         }        
     }
 }
