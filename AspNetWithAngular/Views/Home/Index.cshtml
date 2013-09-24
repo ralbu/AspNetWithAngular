@@ -12,7 +12,11 @@
 <div data-ng-controller="homeIndexController">
 
     <div class="message-header">
-        <div>This is: {{name}}</div>
+        <div>Number of messages: {{data.length}}</div>
+    </div>
+    
+    <div class="progress progress-striped active" data-ng-show="isBusy">
+        <div class="bar" style="width: 100%"></div>
     </div>
 
 
@@ -24,7 +28,7 @@
                 {{item.title}}
             </div>
             <div class="date span2">
-              {{item.created}}
+              {{item.created | date:"medium"}}
             </div>
             <div class="contents span12">
                 {{item.body}}
@@ -33,28 +37,12 @@
                 <button class="btn btn-primary reply-button">Reply</button>
             </div>
             <div class="replies span12">
-                <div class="reply">
+                <div class="reply" data-ng-repeat="r in item.replies">
                     <div class="created pull-right">
-                        Feb 28, 2013
+                        {{r.created | date:"medium"}}
                     </div>
                     <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada semper mi, id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
-                    </div>
-                </div>
-                <div class="reply">
-                    <div class="created pull-right">
-                        Feb 28, 2013
-                    </div>
-                    <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada semper mi, id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
-                    </div>
-                </div>
-                <div class="reply">
-                    <div class="created pull-right">
-                        Feb 28, 2013
-                    </div>
-                    <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada semper mi, id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
+                        {{r.body}}
                     </div>
                 </div>
             </div>

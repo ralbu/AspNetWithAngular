@@ -1,22 +1,17 @@
-﻿function homeIndexController($scope) {
-    $scope.name = "john";
-    $scope.data = [
-        {
-            title: "some title",
-            body: "a body",
-            created: "02/05/2013"
-        }, {
-            title: "some second title",
-            body: "a body",
-            created: "02/05/2013"
-        }, {
-            title: "some fird title",
-            body: "a body",
-            created: "02/05/2013"
-        }, {
-            title: "some forth title",
-            body: "a body",
-            created: "02/05/2013"
-        }
-    ];
+﻿function homeIndexController($scope, $http) {
+    $scope.data = [];
+    $scope.isBusy = true;
+
+    $http.get("/api/v1/topics?includeReplies=true")
+        .then(function(result) {
+            // Successful
+            angular.copy(result.data, $scope.data);
+        },
+            function() {
+                // Error
+                alert('Error loading data');
+            })
+        .then(function() {
+            $scope.isBusy = false;
+        });
 }
