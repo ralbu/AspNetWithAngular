@@ -1,0 +1,3 @@
+﻿function homeIndexController() {
+    alert('con');
+}
