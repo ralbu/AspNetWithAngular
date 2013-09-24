@@ -9,6 +9,7 @@ namespace AspNetWithAngular.Data
 	public interface IMessageBoardRepository
 	{
 		IQueryable<Topic> GetTopics();
+		IQueryable<Topic> GetTopicsIncludingReplies();
 		IQueryable<Reply> GetRepliesByTopic(int topicId);
 
 		bool Save();

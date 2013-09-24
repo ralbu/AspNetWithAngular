@@ -19,7 +19,7 @@ namespace AspNetWithAngular.Controllers
 
 		public IEnumerable<Topic> Get()
 		{
-			var topics = _repository.GetTopics()
+			var topics = _repository.GetTopicsIncludingReplies()
 			                        .OrderByDescending(t => t.Created)
 			                        .Take(25)
 			                        .ToList();

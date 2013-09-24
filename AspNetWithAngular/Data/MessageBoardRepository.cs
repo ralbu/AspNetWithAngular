@@ -18,6 +18,11 @@ namespace AspNetWithAngular.Data
 			return _ctx.Topics;
 		}
 
+		public IQueryable<Topic> GetTopicsIncludingReplies()
+		{
+			return _ctx.Topics.Include("Replies");
+		}
+
 		public IQueryable<Reply> GetRepliesByTopic(int topicId)
 		{
 			return _ctx.Replies.Where(r => r.TopicId == topicId);
