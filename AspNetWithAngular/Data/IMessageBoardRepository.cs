@@ -14,5 +14,7 @@ namespace AspNetWithAngular.Data
 
 		bool Save();
 		bool AddTopics(Topic newTopic);
+		bool AddReply(Reply reply);
+
 	}
 }

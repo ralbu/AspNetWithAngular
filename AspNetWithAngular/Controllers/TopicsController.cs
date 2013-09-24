@@ -17,12 +17,22 @@ namespace AspNetWithAngular.Controllers
 			_repository = repository;
 		}
 
-		public IEnumerable<Topic> Get()
+		public IEnumerable<Topic> Get(bool includeReplies = false)
 		{
-			var topics = _repository.GetTopicsIncludingReplies()
-			                        .OrderByDescending(t => t.Created)
-			                        .Take(25)
-			                        .ToList();
+			IQueryable<Topic> results;
+			if (includeReplies)
+			{
+				results = _repository.GetTopicsIncludingReplies();
+			}
+			else
+			{
+				results = _repository.GetTopics();
+			}
+			var topics = results
+				.OrderByDescending(t => t.Created)
+				.Take(25)
+				.ToList();
+
 			return topics;
 		}
 

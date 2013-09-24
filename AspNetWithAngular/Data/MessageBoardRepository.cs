@@ -53,5 +53,19 @@ namespace AspNetWithAngular.Data
 				return false;
 			}
 		}
+
+		public bool AddReply(Reply reply)
+		{
+			try
+			{
+				_ctx.Replies.Add(reply);
+
+				return true;
+			}
+			catch (Exception e)
+			{
+				return false;
+			}
+		}
 	}
 }
