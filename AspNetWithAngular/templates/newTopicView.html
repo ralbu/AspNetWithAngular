@@ -1,13 +1,15 @@
 ﻿<h3>New topic</h3>
-<form name="newTopicForm">
+<form name="newTopicForm" novalidate data-ng-submit="save()">
     <fieldset>
         <div>
             <label for="title">Title</label>
-            <input name="title" type="text" />
+            <input name="title" type="text" data-ng-model="newTopic.title" required="" />
+            <span class="error" data-ng-show="newTopicForm.title.$error.required">*</span>
         </div>
         <div>
             <label for="body">Body</label>
-            <textarea name="body" type="text" rows="5" cols="30" />
+            <textarea name="body" type="text" rows="5" cols="30" data-ng-model="newTopic.body" required="" />
+            <span class="error" data-ng-show="newTopicForm.body.$error.required">*</span>
         </div>
         <div>
             <input type="submit" class="btn" value="Save" />

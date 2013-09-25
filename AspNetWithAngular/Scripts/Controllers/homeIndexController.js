@@ -34,5 +34,8 @@ function topicsController($scope, $http) {
 }
 
 function newTopicController($scope, $http, $window) {
-    
+    $scope.newTopic = {};
+    $scope.save = function() {
+        alert($scope.newTopic.title);
+    };
 }
