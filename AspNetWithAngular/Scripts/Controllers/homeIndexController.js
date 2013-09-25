@@ -5,8 +5,14 @@ module.config(function($routeProvider) {
         controller: "topicsController",
         templateUrl: "templates/topicsView.html"
     });
-    
+
     $routeProvider.otherwise({ redirectTo: "/" });
+
+    $routeProvider.when("/newmessage", {
+        controller: "newTopicController",
+        templateUrl: "templates/newTopicView.html"
+    });
+
 });
 
 function topicsController($scope, $http) {
@@ -25,4 +31,8 @@ function topicsController($scope, $http) {
         .then(function() {
             $scope.isBusy = false;
         });
+}
+
+function newTopicController($scope, $http, $window) {
+    
 }
