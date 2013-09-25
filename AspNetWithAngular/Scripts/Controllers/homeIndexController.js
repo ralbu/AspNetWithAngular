@@ -35,7 +35,16 @@ function topicsController($scope, $http) {
 
 function newTopicController($scope, $http, $window) {
     $scope.newTopic = {};
-    $scope.save = function() {
-        alert($scope.newTopic.title);
+    $scope.save = function () {
+
+        $http.post("/api/v1/topics", $scope.newTopic)
+            .then(function(result) {
+                var newTopic = result.data;
+                $window.location = "#/";
+            },
+                function() {
+                    alert("error");
+                });
+
     };
 }
